@@ -1,0 +1,90 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="650"
+        x:Class="EsCanile.MainWindow"
+        Title="EsCanile"
+        RequestedThemeVariant="Light"
+        WindowStartupLocation="CenterScreen" Background="#F3F5FA">
+
+    <ScrollViewer>
+        <Grid Margin="32" ColumnDefinitions="*, *">
+
+            
+            <StackPanel Grid.Column="0" Spacing="12" Margin="0,0,20,0">
+                <TextBlock Text="ESERCIZIO CANILE" TextAlignment="Center"
+                           FontWeight="Bold" FontSize="32" 
+                           Margin="0,0,0,16"/>
+
+                <Label Target="txtNome" Content="NOME:" />
+                <TextBox x:Name="txtNome" PlaceholderText="Inserisci nome"
+                         PlaceholderForeground="Gray" Width="250"
+                         HorizontalAlignment="Left"
+                           />
+
+                <Label Target="txtAnno" Content="ANNO DI NASCITA:" />
+                <TextBox x:Name="txtAnno" PlaceholderText="Inserisci anno di nascita"
+                         PlaceholderForeground="Gray" Width="250"
+                         HorizontalAlignment="Left"
+                           />
+
+                <Label Target="Razza" Content="RAZZA:" />
+                <ComboBox x:Name="Razza" Width="250" PlaceholderText="Seleziona razza"
+                            
+                          PlaceholderForeground="Gray" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="Golden Retriver"/>
+                    <ComboBoxItem Content="Corgi"/>
+                    <ComboBoxItem Content="Rottweiler"/>
+                    <ComboBoxItem Content="Pastore Tedesco"/>
+                    <ComboBoxItem Content="Bovaro del Bernese"/>
+                </ComboBox>
+
+                <Label Target="txtDataIngresso" Content="DATA DI INGRESSO:" />
+                <TextBox x:Name="txtDataIngresso" PlaceholderText="GG/MM/AAAA"
+                         PlaceholderForeground="Gray" Width="250"
+                         HorizontalAlignment="Left"
+                           />
+
+                <Label Target="cmbStato" Content="STATO ATTUALE:" />
+                <ComboBox x:Name="cmbStato" Width="250" PlaceholderText="Seleziona stato"
+                            
+                          PlaceholderForeground="Gray" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="In attesa"/>
+                    <ComboBoxItem Content="In cura"/>
+                    <ComboBoxItem Content="Disponibile per adozione"/>
+                    
+                </ComboBox>
+
+                <Label Target="txtNote" Content="NOTE PER L'ADOZIONE:" />
+                <TextBox x:Name="txtNote" PlaceholderText="Informazioni utili (opzionale)"
+                         PlaceholderForeground="Gray" Width="250" Height="60"
+                         AcceptsReturn="True" TextWrapping="Wrap"
+                         HorizontalAlignment="Left"
+                           />
+
+                <Button Content="Registra cane " Click="BtnRegistra_Click"  Background="#F3F5FA" ></Button>
+                
+
+                <TextBlock x:Name="txtMessaggio" TextWrapping="Wrap"
+                           FontWeight="Bold" Margin="0,8,0,0" />
+            </StackPanel>
+
+            
+            <StackPanel Grid.Column="1" Spacing="12">
+                <TextBlock Text="CANI PRESENTI NEL CANILE" FontWeight="Bold"
+                           FontSize="20" />
+
+                <ListBox x:Name="listaCani" Height="400"
+                         Background="#F3F5FA" 
+                          BorderThickness="1">
+                    
+                </ListBox>
+                <Button Content="Adotta cane selezionato" Click="BtnAdotta_Click"  Background="#F3F5FA" ></Button>
+                
+
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
